@@ -1,2 +1,2 @@
-a:	PalindromeLinkedList.cpp
-	g++ -Wall -g -o a.exe PalindromeLinkedList.cpp
+PalindromeLinkedList:	PalindromeLinkedList.cpp
+	g++ -Wall -g -o PalindromeLinkedList PalindromeLinkedList.cpp
