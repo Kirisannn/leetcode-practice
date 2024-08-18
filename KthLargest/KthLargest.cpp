@@ -14,12 +14,17 @@ class KthLargest {
     KthLargest(int k, vector<int>& nums) {
         this->k = k;
         this->nums = &nums;
+        sort(this->nums->begin(), this->nums->end(), greater<int>());
+        while (this->nums->size() > k) {
+            this->nums->pop_back();
+        }
     }
 
     int add(int val) {
         this->nums->push_back(val);
         sort(this->nums->begin(), this->nums->end(), greater<int>());
-        return this->nums->at(this->k - 1);
+        this->nums->pop_back();
+        return this->nums->at(k - 1);
     }
 };
 
