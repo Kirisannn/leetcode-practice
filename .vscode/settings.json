@@ -5,6 +5,13 @@
         "ostream": "cpp",
         "bitset": "cpp",
         "string_view": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "expected": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp",
+        "valarray": "cpp"
     }
 }
