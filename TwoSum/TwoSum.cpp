@@ -7,18 +7,25 @@ using namespace std;
 class Solution {
    public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> res = {0, 0};
+        vector<pair<int, int>> nNums(nums.size(), {0, 0});
+        for (int i = 0; i < (int)nums.size(); i++) {
+            nNums[i] = {nums[i], i};
+        }
 
-        int i = 0, j = 0;
-        for (i = 0; i < (int)nums.size(); i++) {
-            int diff = target - nums[i];
-            for (j = i + 1; j < (int)nums.size(); j++) {
-                if (diff == nums[j]) {
-                    return {i, j};
-                }
+        sort(nNums.begin(), nNums.end());
+        int left = 0, right = nums.size() - 1;
+        while (left < right) {
+            if (nNums[left].first + nNums[right].first == target) {
+                return {nNums[left].second, nNums[right].second};
+            }
+
+            if (nNums[left].first + nNums[right].first < target) {
+                left++;
+            } else {
+                right--;
             }
         }
-        return {0, 0};
+        return vector<int>{nNums[left].second, nNums[right].second};
     }
 };
 
